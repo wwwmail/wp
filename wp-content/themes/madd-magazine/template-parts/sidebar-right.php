@@ -24,7 +24,7 @@
                                         <a href="<?php echo get_permalink($post->ID) ?>">
                                             <span class="post-title"><?php echo $post->post_title ?></span>
                                         </a>
-                                        <span class="post-description">Google — американская транснациональная публичная корпорация, реорганизованная 2 октября 2015 года в международный конгломерат Alphabet Inc.</span>
+                                        <span class="post-description"><?php echo mb_substr ( wp_strip_all_tags( $post->post_content ), 0, 200);?></span>
                                         <span class="rpwwt-post-date">
                                             <?php echo date("d", strtotime($post->post_date)); ?> 
                                             <?php echo getRussianMonths()[date("n", strtotime($post->post_date)) - 1]; ?> 

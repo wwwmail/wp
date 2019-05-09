@@ -21,6 +21,23 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site-wrapper">
+	<div class="top-header">
+		<div class="container">
+			<div class="site-branding header-site-branding">
+				<div class="logo-wrap">
+					<?php the_custom_logo(); ?>
+				</div>
+				<?php
+					if ( is_front_page() && is_home() ) : ?>
+						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<?php else : ?>
+						<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+					<?php
+					endif; ?>
+			</div>
+		</div>
+	</div>
+	
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'madd-magazine' ); ?></a>
 	<header id="masthead" class="header">
 		<div class="header-inner">
@@ -89,35 +106,4 @@
 		</div>
 	</header>
 	<div class="main-page">
-		<div class="top-ads-wrap">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-9 col-md-push-3">
-						<div class="top-ads-block">
-							<?php if(!function_exists('dynamic_sidebar') || !dynamic_sidebar('ads-widget1')) ?>
-						</div>
-					</div>
-					<div class="col-md-3 col-md-pull-9">
-						<div class="site-branding header-site-branding">
-							<div class="logo-wrap">
-								<?php the_custom_logo(); ?>
-							</div>
-							<?php
-								if ( is_front_page() && is_home() ) : ?>
-									<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-								<?php else : ?>
-									<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-								<?php
-								endif;
-
-								$description = get_bloginfo( 'description', 'display' );
-								if ( esc_attr($description) || is_customize_preview() ) : ?>
-									<p class="site-description"><?php echo esc_html($description); /* WPCS: xss ok. */ ?></p>
-								<?php
-								endif; ?>
-						</div><!-- .site-branding -->
-					</div>
-				</div>
-			</div>
-		</div>
 		<div id="content" class="site-content">

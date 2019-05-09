@@ -9,11 +9,14 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" class="post-template" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
-
+        
+    <div class="template-img">
+        <?php echo the_post_thumbnail(); ?>
+    </div>
 
 	<div class="body-content post-content-wrap">
 		<?php

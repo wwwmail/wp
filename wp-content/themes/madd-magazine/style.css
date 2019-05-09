@@ -146,7 +146,8 @@ input::-moz-focus-inner {
 	padding: 0;
 }
 input {
-	line-height: normal;
+	line-height: normal;\
+	outline: none !important;
 }
 input[type="checkbox"],
 input[type="radio"] {
@@ -172,6 +173,7 @@ legend {
 }
 textarea {
 	overflow: auto;
+	outline: none !important;
 }
 optgroup {
 	font-weight: bold;
@@ -739,15 +741,21 @@ textarea{
 	width: 100%;
 }
 input[type="submit"]{
-	background: #000;
+	/*background: #000;*/
+	background-color: #044476;
 	color: #fff;
 	cursor: pointer;
 	font-weight: bold;
-	letter-spacing: 0.07em;
-	padding: 11px 0;
-	font-size: 1rem;
-	text-transform: uppercase;
-	
+	padding: 12px 20px;
+    font-size: 14px;
+    text-transform: uppercase;
+    width: auto;
+	background-color: #044476;
+	margin: 0;
+}
+input[type="submit"]:hover,input[type="submit"]:focus, input[type="submit"]:active{
+	background-color: #044476;
+	opacity: 0.9;
 }
 .clearfix:before,
 .clearfix:after,
@@ -924,14 +932,13 @@ input[type="submit"]{
 #touch-menu{
   display: none;
   width: 26px;
-  height: 30px;
+  height: 26px;
   margin: 0;
-  right: 15px;
-  top: 14px;
-  position: absolute;
-  z-index: 5;
+  position: relative;
+  z-index: 10;
+  outline: none !important;
 }
-#touch-menu span:after,
+/*#touch-menu span:after,
 #touch-menu span:before {
   content: "";
   position: absolute;
@@ -964,8 +971,8 @@ input[type="submit"]{
 }
 #touch-menu.on span:after {
   transform: rotate(-45deg) translate(7px, -8px);
-}
-.site-navigation{;
+}*/
+.site-navigation{
 	float: left;
   font-size: .9em;
 	letter-spacing:.5px;
@@ -1579,7 +1586,7 @@ header .site-navigation a:hover{
     position: absolute;
 }
 .relations .rpwwt-widget {
-		padding-top: 16px;
+	padding-top: 16px;
 }
 @media only screen and (min-width : 768px) {
 	.sidebar-wrap-grid .row{
@@ -1729,17 +1736,20 @@ header .site-navigation a:hover{
 }
 /*-----------------Post-------------*/
 .form-submit{
-	margin: 0;
+	margin: 0 auto;
+	margin-bottom: 0 !important;
+	text-align: center;
 }
 .comment-metadata{
-	margin-top: 5px;
+	margin-top: 3px;
 }
 .comments-area{
 	font-size: 14px;
 }
 .comments-area p{
-	font-size: 1em;
-	margin: 0.8em 0;
+	font-size: 14px;
+    margin: 4px 0;
+    letter-spacing: 0;
 }
 .comments-area ul,
 .comments-area ol{
@@ -1763,7 +1773,6 @@ header .site-navigation a:hover{
 	text-decoration: none;
 }
 .reply{
-	margin-bottom: 30px;
 	text-decoration: underline;
 }
 .blog-post-more-image {
@@ -1826,9 +1835,6 @@ header .site-navigation a:hover{
 	.col-md-9{
 		width: 100%;
 	}
-	.header-inner{
-		padding: 14px 0;
-	}
 	.social-wrap{
 		float: none;
 	}
@@ -1855,13 +1861,14 @@ header .site-navigation a:hover{
 	}
 	.site-navigation > ul,
 	.site-navigation div > ul{
-		padding: 10px 15px;
+		padding: 10px 0px;
 		text-align: left;
-		border-bottom: 2px solid #333;
+		border-bottom: 1px solid #ccc;
 	}
 	.site-navigation ul li{
 		display: block;
-		padding: 5px 0;
+		padding: 0;
+		border: none;
 	}
 	.site-navigation .sub-menu{
 		padding: 0 0 0 15px;
@@ -1878,12 +1885,12 @@ header .site-navigation a:hover{
 	.sidebar-wrap .post-title{
 		font-size: 1em;
 	}
-	.main-slide-top .slide-thumbnail{
+	/*.main-slide-top .slide-thumbnail{
 		height: 640px;
-	}
-	.main-slider-wrap .slide-button{
+	}*/
+/*	.main-slider-wrap .slide-button{
 		top: 601px;
-	}
+	}*/
 	.footer-widget{
 		width: 50%;
 	}
@@ -1940,12 +1947,12 @@ header .site-navigation a:hover{
 	.main-slider-wrap{
 		padding: 12px;
 	}
-	.main-slide-top .slide-thumbnail{
+/*	.main-slide-top .slide-thumbnail{
 		height: 290px;
-	}
-	.main-slider-wrap .slide-button{
+	}*/
+	/*.main-slider-wrap .slide-button{
 		top: 251px;
-	}
+	}*/
 	.blog-post-wrap{
 		width: 100%;
 	}
@@ -1982,4 +1989,189 @@ header .site-navigation a:hover{
 	.site-navigation ul .sub-menu li a{
 		display: block;
 	}
+}
+.main-page {
+	padding-top: 35px;
+}
+.post-template .template-img img{
+	width: 100%;
+}
+.post-template .entry-title {
+	font-family: "Noto Serif",serif;
+    color: #2c2c2c;
+    font-size: 40px;
+    padding-bottom: 34px;
+    margin: 0;
+    font-weight: normal;
+    line-height: 1.15;
+}
+.comments-area {
+	display: block;
+    background: #f2f2f2;
+    width: 60%;
+    padding: 30px;
+    margin-bottom: 20px;
+    border: 1px solid #dfdfdf;
+    border-radius: 3px;
+}
+.comments-area .comment-reply-title, .comments-area .comments-title {
+	display: block;
+    border-bottom: 1px solid #dfdfdf;
+    font-family: "PT Sans",serif;
+    text-transform: uppercase;
+    color: #1c1c1c;
+    font-weight: 600;
+    font-size: 18px;
+    padding-bottom: 18px;
+    margin: 0;
+    line-height: 1.15;
+}
+.comment-notes {
+	display: none;
+}
+.comment-form label {
+	padding-bottom: 5px;
+    display: inline-block;
+}
+.comment-list {
+	margin: 20px 0;
+}
+.comment-body {
+	position: relative;
+	background: #fff;
+	border: 1px solid #dfdfdf;
+	border-radius: 4px;
+	padding: 20px 15px;
+	padding-left: 65px;
+}
+.comment-list .children{
+	margin-top: 15px;
+	padding-left: 15px;
+}
+.comment-body .avatar {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	position: absolute;
+	left: 15px;
+}
+.comment-body .fn{
+	font-size: 18px;
+}
+.sidebar-wrap-template {
+}
+.sidebar-wrap-template .rpwwt-widget ul li {
+    border-bottom: 1px solid #b1b1b1 !important;
+    padding-bottom: 15px !important;
+    padding-top: 15px !important;
+}
+.sidebar-wrap-template .rpwwt-widget ul li:first-child {
+	padding-top: 0 !important;
+}
+.sidebar-wrap-template .rpwwt-widget ul li img {
+	width: 100%;
+}
+@media only screen and (max-width : 768px) {
+	.header-site-branding .site-title{
+		text-align: center;
+	}
+	.top-header {
+		position: absolute;
+	    top: 0;
+	    width: 100%;
+	    z-index: 9;
+	}
+	.header {
+		background: transparent;
+		border-bottom: 1px solid #ccc;
+    	padding: 15px 0;
+	}
+	.header-inner{
+		padding: 0;
+	}
+	#touch-menu span{
+		display: inline-block;
+		width: 26px;
+		height: 26px;
+		background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAMAAADypuvZAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAA8UExURUdwTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIev/tYAAAATdFJOUwBH8/4EJ9dmEVWbh08yXoji3RDWw7LqAAAAW0lEQVRIx+3Syw6AIAxEUVALqPjk///VVWU7IYFu5uwnadLrHJEdCQU1nTraCy7oKM/4aPvvOyIqL/ymoTeB6pvkGdWe79yeZ3uWUkN7N95e1NE1rj1ZUWyPbH30fyNkI12xWQAAAABJRU5ErkJggg==');
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: 26px;
+	}
+	header .site-navigation a {
+		font-family: -apple-system,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+	    font-weight: 400;
+	    font-size: 18px;
+        letter-spacing: 1px;
+        width: 100%;
+        display: block;
+	}
+	.mobile-menu.on {
+		-webkit-transform: rotate(-90deg);
+	    -ms-transform: rotate(-90deg);
+	    -o-transform: rotate(-90deg);
+	    transform: rotate(-90deg);
+	    -webkit-transition-duration: .2s;
+	    -o-transition-duration: .2s;
+	    transition-duration: .2s;
+	}
+	.main-page {
+		padding: 35px;
+		padding-top: 45px;
+	}
+	.main-slider-wrap {
+		margin-bottom: 0;
+	}
+	/*.col-md-6{
+		padding: 0;
+	}
+	.main-slider-wrap .slide-prev {
+	    left: -15px;
+	}
+	.main-slider-wrap .slide-next {
+	    right: -15px;
+	}*/
+}
+@media only screen and (max-width : 768px) {
+	.sidebar-wrap-grid.fashion .col-md-3, .sidebar-wrap-grid.fashion .col-md-3:nth-child(3n){
+		width: 100%;
+		padding-bottom: 35px;
+	}
+	.sidebar-wrap-grid.fashion .col-md-3:first-child .sidebar-wrap-grid-list-img, .sidebar-wrap-grid.fashion .col-md-3:first-child .rpwwt-post-info{
+		width: 100%;	
+	}
+	.sidebar-wrap-grid.fashion .col-md-3:first-child .sidebar-wrap-grid-list-img{
+		padding: 0;
+	}
+	.sidebar-wrap-grid.fashion .col-md-3:first-child .rpwwt-post-info{
+		padding: 25px 0 0 0;
+	}
+	.sidebar-wrap-grid.fashion .col-md-3 .sidebar-wrap-grid-list-img{
+		width: 50%;
+		padding-right: 15px;
+	}
+	.sidebar-wrap-grid.fashion .col-md-3 .rpwwt-post-info{
+		width: 50%;
+		padding: 0;
+		padding-left: 15px;
+	}
+	.sidebar-wrap-grid.fashion .col-md-3:nth-child(3n){
+		padding-top: 35px;
+	}
+	.sidebar-wrap-grid.fashion .col-md-3:nth-child(3n) .sidebar-wrap-grid-list-img{
+		float: right;
+		width: 50%;
+		padding: 0 0 0 15px;
+	}
+	.sidebar-wrap-grid.fashion .col-md-3:nth-child(3n) .rpwwt-post-info{
+		width: 50%;
+		padding: 0 15px 0 0;
+	}
+	.sidebar-wrap-grid.fashion .col-md-3:nth-child(2n){
+		border-bottom: 1px solid #303030;
+	}
+	.fashion, .recipe{
+		background: #fff;
+	}
+	
 }

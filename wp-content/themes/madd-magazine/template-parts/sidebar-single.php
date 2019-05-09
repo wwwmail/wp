@@ -11,7 +11,7 @@ $related = get_posts(
 if ($related) {
     ?>
 
-    <div class="sidebar-wrap">
+    <div class="sidebar-wrap sidebar-wrap-template col-md-3">
         <div class="sidebar-widget">
             <div id="recent-posts-widget-with-thumbnails-5" class="recent-posts-widget-with-thumbnails sidebar-widget">
                 <div id="rpwwt-recent-posts-widget-with-thumbnails-5" class="rpwwt-widget">
@@ -23,12 +23,12 @@ if ($related) {
                                     <?php the_post_thumbnail(); ?>
                                     <span class="rpwwt-post-title"><?php echo $post->post_title ?></span>
                                 </a>
-                                <span class="rpwwt-post-date">
+<!--                                 <span class="rpwwt-post-date">
                                     <?php echo date("d", strtotime($post->post_date)); ?> 
                                     <?php echo getRussianMonths()[date("n", strtotime($post->post_date)) - 1]; ?> 
                                     <?php echo date("Y", strtotime($post->post_date)); ?> 
 
-                                </span>
+                                </span> -->
                             </li>
                         <?php } 
                         wp_reset_postdata();

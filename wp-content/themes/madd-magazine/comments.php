@@ -26,7 +26,7 @@ if ( post_password_required() ) {
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) : ?>
 		<h2 class="comments-title">
-			<?php
+			<!-- <?php
 			$comment_count = get_comments_number();
 			if ( 1 === $comment_count || $comment_count == 1 ) {
 				printf(
@@ -41,7 +41,8 @@ if ( post_password_required() ) {
 					'<span>' . get_the_title() . '</span>'
 				);
 			}
-			?>
+			?> -->
+			Комментарии
 		</h2><!-- .comments-title -->
 
 		<?php the_comments_navigation(); ?>
