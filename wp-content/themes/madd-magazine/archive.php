@@ -57,7 +57,7 @@ get_header();
                                 'excerpt_length' => 55,
                                 'thumbnail_width' => 200,
                                 'thumbnail_height' => 130,
-                                'post_html' => '<li><img src={thumb_url}> <a href="{url}">{text_title}</a> {summary}</li>'
+                                'post_html' => '<li><a href="{url}"><img src={thumb_url}></a> <a class="post-title" href="{url}">{text_title}</a> <span class="post-description">{summary}</span></li>'
                             );
 
                             wpp_get_mostpopular($args);

@@ -15,7 +15,7 @@
             <div id="recent-posts-widget-with-thumbnails-5" class="recent-posts-widget-with-thumbnails sidebar-widget">
                 <div id="rpwwt-recent-posts-widget-with-thumbnails-5" class="rpwwt-widget">	
                     <div class="row">
-                        <?php foreach (get_posts_by_category(3, 5) as $post) { ?>
+                        <?php foreach (get_posts_by_category(3, 3) as $post) { ?>
                             <div class="col-md-6">
                                 <div class="sidebar-wrap-grid-list">
                                     <a class="sidebar-wrap-grid-list-img" href="<?php echo get_permalink($post->ID) ?>">

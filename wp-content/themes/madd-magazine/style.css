@@ -384,12 +384,12 @@ textarea {
 a {
 	color: royalblue;
 }
-a:visited {
+/*a:visited {
 	color: purple;
 }
 a:hover, a:focus, a:active {
 	color: midnightblue;
-}
+}*/
 a:focus {
 	outline: thin dotted;
 }
@@ -904,6 +904,13 @@ input[type="submit"]:hover,input[type="submit"]:focus, input[type="submit"]:acti
 .header{
 	background: #000;
   position: relative;
+  z-index: 99;
+}
+.top-header {
+	z-index: 99;
+	display: block;
+    position: relative;
+    background: #fff;
 }
 .header-inner{
   padding: 20px 0;
@@ -1032,6 +1039,8 @@ header .site-navigation a:hover{
 	background: #202020;
   color: #fff;
   width: 100%;
+  position: relative;
+  z-index: 99;
   
 }
 .footer p{
@@ -1085,9 +1094,11 @@ header .site-navigation a:hover{
 	margin: 0 auto;
 	/*max-width: 1270px;*/
 }
+.health {
+	margin-bottom: 35px;
+}
 .main-slider-wrap{
 	/*background: #000;*/
-	margin-bottom: 35px;
 	width: 100%;
 	border: 5px solid #000; 
 }
@@ -1588,6 +1599,10 @@ header .site-navigation a:hover{
 .relations .rpwwt-widget {
 	padding-top: 16px;
 }
+.relations .sidebar-wrap {
+	border: 1px solid #333;
+	background: #fff;
+}
 @media only screen and (min-width : 768px) {
 	.sidebar-wrap-grid .row{
 		display: -webkit-box;
@@ -1609,9 +1624,6 @@ header .site-navigation a:hover{
 	.sidebar-wrap-grid.fashion .col-md-3:nth-child(3n) .rpwwt-post-info {
 		width: 52%;
 		padding: 0 0 0 30px;
-	}
-	.sidebar-wrap-grid.fashion .col-md-3:nth-child(n+4){
-		display: none;/*delete*/
 	}
 	.sidebar-wrap-grid{
 		padding: 70px 0;
@@ -1660,8 +1672,6 @@ header .site-navigation a:hover{
 		margin-top: -70px;
 	}
 	.relations .sidebar-wrap {
-		border: 1px solid #333;
-		background: #fff;
 		padding: 28px 40px 45px 40px;
 	}
 	.sidebar-wrap-grid.relations .col-md-2{
@@ -1711,6 +1721,7 @@ header .site-navigation a:hover{
 	line-height: 1.5;
 	margin: 0 0 0.6em;
 	text-transform: uppercase;
+	color: #000;
 }
 .sidebar-wrap .rpwwt-post-author{
 	font-size: 13px;
@@ -1816,9 +1827,14 @@ header .site-navigation a:hover{
 }
 .category .main-page {
 	background-color: #f9f9f9;
+	padding: 0;
 }
-.category-moda .main-page {
-	background: url("/img/beauty.jpg");
+.category .main-page .container{
+	background: #fff;
+	position: relative;
+	z-index: 99;
+	padding-top: 35px;
+	box-shadow: 0px 8px 6px 1px #666
 }
 /*--------------Responsive-------------*/
 @media only screen and (max-width : 992px) {
@@ -2025,6 +2041,8 @@ header .site-navigation a:hover{
     padding-bottom: 18px;
     margin: 0;
     line-height: 1.15;
+    margin-bottom: 18px;
+    text-align: center;
 }
 .comment-notes {
 	display: none;
@@ -2068,9 +2086,16 @@ header .site-navigation a:hover{
 .sidebar-wrap-template .rpwwt-widget ul li:first-child {
 	padding-top: 0 !important;
 }
+.sidebar-wrap-template .rpwwt-widget ul li:last-child {
+	border-bottom: none !important;
+}
 .sidebar-wrap-template .rpwwt-widget ul li img {
 	width: 100%;
 }
+.comments-area .form-submit{
+	margin-top: 20px;
+}
+
 @media only screen and (max-width : 768px) {
 	.header-site-branding .site-title{
 		text-align: center;
@@ -2119,9 +2144,6 @@ header .site-navigation a:hover{
 		padding: 35px;
 		padding-top: 45px;
 	}
-	.main-slider-wrap {
-		margin-bottom: 0;
-	}
 	/*.col-md-6{
 		padding: 0;
 	}
@@ -2132,10 +2154,31 @@ header .site-navigation a:hover{
 	    right: -15px;
 	}*/
 }
+.popular-posts-list ul {
+	margin: 0;
+	padding: 0;
+}
+.popular-posts-list ul li {
+	width: 100%;
+	padding-bottom: 20px;
+}
+.popular-posts-list ul li a, .popular-posts-list ul li img {
+	width: 100%;
+}
+.popular-posts-list ul li span{
+	width: 100%;
+}
 @media only screen and (max-width : 768px) {
-	.sidebar-wrap-grid.fashion .col-md-3, .sidebar-wrap-grid.fashion .col-md-3:nth-child(3n){
+	.sidebar-wrap-grid .rpwwt-post-info{
+		padding: 25px 0 0 0;
+	}
+	.sidebar-wrap-grid.fashion .col-md-3{
 		width: 100%;
 		padding-bottom: 35px;
+	}
+	.sidebar-wrap-grid.fashion .col-md-3:nth-child(3n){
+		width: 100%;
+		padding-bottom: 0;
 	}
 	.sidebar-wrap-grid.fashion .col-md-3:first-child .sidebar-wrap-grid-list-img, .sidebar-wrap-grid.fashion .col-md-3:first-child .rpwwt-post-info{
 		width: 100%;	
@@ -2155,9 +2198,6 @@ header .site-navigation a:hover{
 		padding: 0;
 		padding-left: 15px;
 	}
-	.sidebar-wrap-grid.fashion .col-md-3:nth-child(3n){
-		padding-top: 35px;
-	}
 	.sidebar-wrap-grid.fashion .col-md-3:nth-child(3n) .sidebar-wrap-grid-list-img{
 		float: right;
 		width: 50%;
@@ -2167,11 +2207,229 @@ header .site-navigation a:hover{
 		width: 50%;
 		padding: 0 15px 0 0;
 	}
-	.sidebar-wrap-grid.fashion .col-md-3:nth-child(2n){
+	.sidebar-wrap-grid.fashion .col-md-3:nth-child(2n) .sidebar-wrap-grid-list{
 		border-bottom: 1px solid #303030;
+		padding-bottom: 35px;
+		overflow: hidden;
 	}
 	.fashion, .recipe{
 		background: #fff;
 	}
-	
+	.sidebar-wrap-grid {
+	    padding: 35px 0 0 0;
+	}
+	.sidebar-wrap {
+	    margin-top: 0px;
+	}
+	.sidebar-left-post ul li .rpwwt-post-img img{
+		display: block;
+	}
+	.health {
+		margin-bottom: 0;
+	}	
+	.health #sidebar-left {
+		margin-top: 35px;
+	}
+	.sidebar-wrap-grid.children .big-news .col-md-5:nth-child(2) .sidebar-wrap-grid-list-img{
+		margin-top: 0;
+	}
+	.small-news {
+	    width: 100%;
+	    padding-bottom: 35px;
+	}
+	.big-news {
+		width: 100%;
+	}
+	.sidebar-wrap-grid.children .big-news .col-md-5{
+		width: 100% !important;  
+	}
+	.sidebar-wrap-grid.children .big-news .col-md-5 .sidebar-wrap-grid-list-img{
+		width: 50%;
+		padding-right: 15px;
+	}
+	.sidebar-wrap-grid.children .big-news .col-md-5 .rpwwt-post-info{
+		width: 50%;
+		padding: 0;
+		padding-left: 15px;
+	}
+	.sidebar-wrap-grid.children .big-news .col-md-5:first-child .sidebar-wrap-grid-list {
+		border-bottom: 1px solid #303030;
+		padding-bottom: 35px;
+		overflow: hidden;
+	}
+	.sidebar-wrap-grid.children .big-news .col-md-5:first-child {
+		padding-bottom: 35px;
+	}
+	.sidebar-wrap-grid.children .big-news .col-md-5:last-child .sidebar-wrap-grid-list-img{
+		float: right;
+		padding: 0 0 0 15px;
+	}
+	.sidebar-wrap-grid.children .big-news .col-md-5:last-child .rpwwt-post-info{
+		padding: 0 15px 0 0 ;
+	}
+	.sidebar-wrap-grid.recipe .col-md-4 {
+		width: 100% !important;
+		padding-bottom: 35px;
+	}
+	.sidebar-wrap-grid.recipe .col-md-4:nth-child(2) .sidebar-wrap-grid-list-img{
+		margin: 0;
+	}
+	.sidebar-wrap-grid.recipe .col-md-4{
+		width: 100% !important;
+		padding-bottom: 35px;
+	}
+	.sidebar-wrap-grid.recipe .col-md-4:nth-child(3n){
+		padding-bottom: 0;
+	}
+	.sidebar-wrap-grid.recipe .col-md-4:first-child .sidebar-wrap-grid-list-img{
+		padding: 0;
+	}
+	.sidebar-wrap-grid.recipe .col-md-4:first-child .sidebar-wrap-grid-list-img, .sidebar-wrap-grid.recipe .col-md-4:first-child .rpwwt-post-info{
+		width: 100%;	
+	}
+	.sidebar-wrap-grid.recipe .col-md-4:first-child .rpwwt-post-info{
+		padding: 25px 0 0 0;
+	}
+	.sidebar-wrap-grid.recipe .col-md-4 .sidebar-wrap-grid-list-img{
+		width: 50%;
+		padding-right: 15px;
+	}
+	.sidebar-wrap-grid.recipe .col-md-4 .rpwwt-post-info{
+		width: 50%;
+		padding: 0;
+		padding-left: 15px;
+	}
+	.sidebar-wrap-grid.recipe .col-md-4:nth-child(3n) .sidebar-wrap-grid-list-img{
+		float: right;
+		width: 50%;
+		padding: 0 0 0 15px;
+	}
+	.sidebar-wrap-grid.recipe .col-md-4:nth-child(3n) .rpwwt-post-info{
+		width: 50%;
+		padding: 0 15px 0 0;
+	}
+	.sidebar-wrap-grid.recipe .col-md-4:nth-child(2n) .sidebar-wrap-grid-list{
+		border-bottom: 1px solid #303030;
+		padding-bottom: 35px;
+		overflow-y: hidden;
+	}
+	.relations {
+		margin: 0;
+	}
+	.people, .relations {
+	    background: #fff;
+	}
+	.sidebar-wrap-grid.relations .col-md-2 {
+		width: 100%;
+		padding-bottom: 35px;
+	}
+	.sidebar-wrap-grid.relations .col-md-2:last-child {
+		padding-bottom: 0;
+	}
+	.relations .sidebar-wrap {
+		padding: 35px 40px 35px 40px;
+	}
+	.sidebar-wrap-grid.people .col-md-6:first-child{
+		padding-bottom: 35px;
+	}
+	.sidebar-wrap-grid.people .col-md-6:nth-child(2) .rpwwt-post-info{
+		padding: 0 0 0 15px;
+	}
+	.sidebar-wrap-grid.people .col-md-6:nth-child(3) .rpwwt-post-info{
+		padding: 0 15px 0 0;
+	}
+	.blog-post-more-image {
+		margin: 0 13px 0px 0;
+	}
+	.blog-post-more-image img {
+		display: block;
+	}
+	.blog-post-more-wrap .categories-wrap {
+		bottom: 0;
+	}
+	.blog-post-more-wrap .date {
+		bottom: 0;
+	}	
+	.sidebar-wrap-grid.people .col-md-6:nth-child(2) .rpwwt-post-info, .sidebar-wrap-grid.people .col-md-6:nth-child(3) .rpwwt-post-info{
+		padding: 25px 0 0 0;
+	}
+	.sidebar-wrap-grid.people .col-md-6{
+		padding-bottom: 35px;
+	}
+	.post-template .entry-title {
+		font-size: 30px;
+		padding-bottom: 20px;
+	}
+	.comments-area {
+		width: 100%;
+	}
+	.sidebar-wrap-template.col-md-3{
+		width: 100%;
+	}
+}
+@media only screen and (max-width : 768px) { 
+	.main-page {
+	    padding: 5px;
+	    padding-top: 35px;
+	}
+}
+@media only screen and (max-width : 480px) { 
+	.main-slide-top .slide-thumbnail{
+		height: 270px;
+	}
+	.swiper-slide {
+	    padding: 10px;
+	}
+	.main-slider-wrap .categories-wrap{
+		top: 0;
+	}
+	.relations .sidebar-wrap{
+		padding: 15px 25px 15px 25px;
+	}
+	.category-title {
+		padding-bottom: 10px;
+	}
+	.blog-post-wrap{
+		margin-bottom: 20px;
+	}
+}
+.category-moda .main-page:before {
+	background: url("/img/beauty2.jpg");
+}
+.category-otnosheniya .main-page:before {
+	background: url("/img/love3.jpg");	
+}
+.category-zdorovye .main-page:before {
+	background: url("/img/yoga6.jpg");		
+}
+.category-retsepty .main-page:before {
+	background: url("/img/food1.jpg");	
+} 
+.category-deti .main-page:before {
+	background: url("/img/children.jpg");
+}
+.category-lyudi .main-page:before {
+	background: url("/img/people.jpg");	
+}
+.category .main-page:before{
+	content: "";
+	position: fixed;
+    top: 0;
+    height: 100%;
+    bottom: 0;
+    display: inline-block;
+    overflow: hidden;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.5;
+}
+@media only screen and (max-width : 768px) { 
+	.category .main-page:before{
+		display: none;
+	}
+	.category .main-page .container{
+		box-shadow: none;
+	}
 }
